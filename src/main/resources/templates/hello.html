@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--link 定义文档与外部资源的关系 ，用途链接外部样式  rel:规定当前文档与被链接文档之间的关系。-->
+    <link href="../static/layui/css/layui.css" th:href="@{/layui/css/layui.css}" rel="stylesheet">
+    <script src="../static/layui/layui.js" th:src="@{/layui/layui.js}"></script>
+</head>
+<body>
+    <div class="layui-tab">
+        <ul class="layui-tab-title">
+            <li class="layui-this">标题</li>
+            <li>标题二</li>
+            <li>标题三</li>
+        </ul>
+    </div>
+
+    <pre class="layui-code">
+        var a = 'hello';
+    </pre>
+    <pre class="layui-code">
+        var a = 'hello2';
+
+        hi
+    </pre>
+
+    <pp>
+        String str = '123';
+    </pp>
+<script>
+    layui.use(['layer', 'form'], function () {
+       var layer = layui.layer;
+       var form = layui.form;
+       layer.msg("hello world");
+    });
+
+    layui.use('code', function () {
+       layui.code({
+           title: 'JavaScript',
+           height: '50px'
+       });
+    });
+    layui.use('code', function () {
+       layui.code({
+           elem: 'pp'// 设置pp标签
+       });
+    });
+
+</script>
+</body>
+</html>
