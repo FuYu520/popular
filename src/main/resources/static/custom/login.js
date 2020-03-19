@@ -13,15 +13,20 @@ function submit() {
     //$("#formLogin").submit();
     //jQuery中的$("input[name='xxx']")的含义
     var username = $("#username").val();
-    var password = $("#password").val();
-    console.log(username);
+    var password = $("input[name='password']").val();
     $.ajax({
         type: "post",
-        dataType: "form-data",
-        url: "/login",
+        url:  ctx + "login",
         data: {
             "username": username,
             "password": password
+        },
+        success: function (r) {
+            console.log("ss:"+r);
+            if (r.code == 0){
+                //登录成功跳转index
+                location.href = ctx +'index';
+            }
         }
     });
 }
