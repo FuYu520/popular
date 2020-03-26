@@ -9,14 +9,15 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>thymeleaf</artifactId>
+    <artifactId>popular</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>thymeleaf</name>
+    <name>popular</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
         <java.version>1.8</java.version>
         <shiro.version>1.4.2</shiro.version>
+        <shiro.ehcache.version>1.4.2</shiro.ehcache.version>
         <shiro.spring.version>1.4.2</shiro.spring.version>
         <mybatis.boot.version>1.3.2</mybatis.boot.version>
         <pagehelper.boot.version>1.2.5</pagehelper.boot.version>
@@ -74,10 +75,25 @@
         </dependency>
 
         <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-ehcache</artifactId>
+            <version>${shiro.ehcache.version}</version>
+        </dependency>
+
+        <!--里面包含logback依赖-->
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <version>2.1.1.RELEASE</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>18.0</version>
+        </dependency>
+
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -97,6 +113,18 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <!--MyBatis自动生成工具插件-->
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.5</version>
+                <configuration>
+                    <configurationFile>${basedir}/run/generatorConfig.xml</configurationFile>
+                    <verbose>true</verbose>
+                    <overwrite>true</overwrite>
+                </configuration>
             </plugin>
         </plugins>
     </build>

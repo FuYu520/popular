@@ -8,7 +8,7 @@ server:
 shiro:
   user:
     #登录地址
-    login: /login
+    loginUrl: /login
     #权限认证失败地址
     unauthorizedUrl: /unauth
     #首页开关地址
@@ -19,11 +19,20 @@ shiro:
     captchaType: math
 mybatis:
   #搜索指定包别名
-  type-aliases-package: com.example.thymeleaf.domain
+  type-aliases-package: com.example.popular.domain
   #配置mapper的扫描，找到所有mapper.xml映射文件
   mapper-locations: classpath*:mapper/*Mapper.xml
   #加载全局配置文件
   configLocation: classpath:mybatis/mybatis-config.xml
+
+# 日志配置
+logging:
+  level:
+    com.example: debug
+    org.springframework: warn
+
+
+
 
 spring:
   datasource:
@@ -72,3 +81,6 @@ spring:
         wall:
           config:
             multi-statement-allow: true
+#  aop:
+#    proxy-target-class: true
+

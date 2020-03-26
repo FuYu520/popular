@@ -2,11 +2,22 @@
  * DOM 加载完后执行
  */
 $(function () {
+    //初始规则
     validateRule();
+});
+/**
+ * 通过验证后运行的函数
+ */
+$.validator.setDefaults({
+    //通过验证后运行的函数
+    submitHandler: function() {
+        submit();
+    }
 });
 
 function login() {
-
+    //a标签的提交，触发校验
+    $("#formLogin").submit();
 }
 
 function submit() {
@@ -22,7 +33,6 @@ function submit() {
             "password": password
         },
         success: function (r) {
-            console.log("ss:"+r);
             if (r.code == 0){
                 //登录成功跳转index
                 location.href = ctx +'index';
@@ -32,7 +42,7 @@ function submit() {
 }
 
 /**
- * 校验规则
+ * 初始校验规则
  */
 function validateRule() {
     var icon = "<i class='fa fa-times-circle'></i> ";
