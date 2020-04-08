@@ -30,6 +30,7 @@ public class UserController {
     @GetMapping("/")
     public String findById(Integer UserId, ModelMap map){
         User user = userSerivce.findById(UserId);
+        user.setUserName("小黑");
         map.put("user", user);
         return "index";
     }

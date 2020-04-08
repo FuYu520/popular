@@ -31,12 +31,12 @@ public class IndexController {
     @GetMapping("/index")
     @RequiresRoles("admin")
     public ModelAndView index(){
+        ModelAndView mv = new ModelAndView("index");
         //取身份信息
         User user = ShiroUtils.getUser();
         Subject subject = ShiroUtils.getSubject();
         //根据用户id取出菜单
         List<Menu> menus = menuService.selectMenusByUser(user);
-        ModelAndView mv = new ModelAndView("index");
         mv.addObject("user", user);
         mv.addObject("menus", menus);
         return mv;

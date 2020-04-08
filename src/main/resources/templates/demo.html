@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="zh"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/user/(UserId=1)}">
+    <H1 style="color: white">[[${user.userName}]]</H1>
+
+</a>
+</body>
+</html>

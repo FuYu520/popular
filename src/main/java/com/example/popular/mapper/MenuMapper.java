@@ -1,17 +1,18 @@
 package com.example.popular.mapper;
 
 import com.example.popular.domain.Menu;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
+@Repository
 public interface MenuMapper {
-    int deleteByPrimaryKey(Integer menuId);
 
-    int insert(Menu record);
+    /**
+     * 查询系统正常显示菜单（不含按钮）
+     *
+     * @return 菜单列表
+     */
+    List<Menu> selectMenuNormalAll();
 
-    int insertSelective(Menu record);
-
-    Menu selectByPrimaryKey(Integer menuId);
-
-    int updateByPrimaryKeySelective(Menu record);
-
-    int updateByPrimaryKey(Menu record);
 }

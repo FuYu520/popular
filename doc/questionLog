@@ -1,0 +1,40 @@
+thymeleaf
+URL 一般有四部分组成： <协议>://< 主机 >:< 端口 >/< 路径 >
+var ctx = [[@{/}]]; 等价于 http://localhost:8080/ 项目名叫什么ctx就叫/xx/ ctx上下文对象 内置对象
+
+
+spring boot 默认使用logback日志框架
+spring-boot-starter-web -> spring-boot-starter -> >spring-boot-starter-logging
+
+subject.login(token);不会进入进入doGetAuthorizationInfo方法进行授权 ，得加注解等几种方法
+加注解得在配置里打开注解
+
+
+postman 加cookie登录，不然shiro不让行，去浏览器中拿，放入header中
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

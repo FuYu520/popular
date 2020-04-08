@@ -34,7 +34,20 @@ logging:
 
 
 
+
 spring:
+  #文件上传配置
+  servlet:
+    multipart:
+      #单个文件最大值
+      max-file-size: 2MB
+      #上传文件总的最大值
+      max-request-size: 10MB
+  devtools:
+    restart:
+      enabled: true
+    #热部署开关
+  #数据源配置
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
