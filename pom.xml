@@ -23,7 +23,7 @@
         <pagehelper.boot.version>1.2.5</pagehelper.boot.version>
         <druid.version>1.1.14</druid.version>
         <fastjson.version>1.2.38</fastjson.version>
-        <guava.version>18.0</guava.version>
+        <guava.version>24.1.1</guava.version>
     </properties>
 
     <dependencies>
